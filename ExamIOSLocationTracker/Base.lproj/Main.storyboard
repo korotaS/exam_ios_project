@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="RwK-bj-2Bx">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Map View Controller-->
+        <scene sceneID="Z1F-V3-xVP">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="RwK-bj-2Bx" customClass="MapViewController" customModule="ExamIOSLocationTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PkX-dj-s4n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Lho-2g-Fsl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current location: not tracking" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5N-IQ-3nS">
+                                <rect key="frame" x="20" y="117" width="374" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="tz3-rn-zku">
+                                <rect key="frame" x="184" y="78" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="toggleSwitch:" destination="RwK-bj-2Bx" eventType="valueChanged" id="A2b-Oi-AG3"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Track!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L23-Qq-Cim">
+                                <rect key="frame" x="178" y="48" width="59" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Lho-2g-Fsl" firstAttribute="leading" secondItem="PkX-dj-s4n" secondAttribute="leading" id="09J-bs-Om1"/>
+                            <constraint firstItem="Lho-2g-Fsl" firstAttribute="top" secondItem="PkX-dj-s4n" secondAttribute="top" id="rKp-px-Gwv"/>
+                            <constraint firstAttribute="trailing" secondItem="Lho-2g-Fsl" secondAttribute="trailing" id="vII-8y-yLe"/>
+                            <constraint firstAttribute="bottom" secondItem="Lho-2g-Fsl" secondAttribute="bottom" id="yEF-7i-ZEw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cpF-VD-PLN"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="JfX-pi-A0V"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="k5N-IQ-3nS" id="GWr-Bq-LZt"/>
+                        <outlet property="mapView" destination="Lho-2g-Fsl" id="ZE8-Pc-XLQ"/>
+                        <outlet property="trackLabel" destination="L23-Qq-Cim" id="cgB-aI-xUV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bns-uC-vha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="331.8840579710145" y="137.94642857142856"/>
+        </scene>
+    </scenes>
+</document>
